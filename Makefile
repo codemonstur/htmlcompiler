@@ -36,9 +36,8 @@ coverage: ## Run tests and generate a jacoco coverage report
 install: ## Compile, package, and install jar in local repository
 	@mvn clean install -DskipTests
 
-# Checks to see if there are newer versions of dependencies or plugins
 validate: ## Check dependency versions, cves, licenses, and code quality
-	@mvn versions:display-dependency-updates
+	@mvn versions:display-dependency-updates "-Dmaven.version.ignore=(?i).*(alpha|beta|rc|-m[0-9]+|snapshot).*"
 	@mvn versions:display-plugin-updates
 	@mvn validate -P vulnerabilities
 	@mvn validate -P licenses
