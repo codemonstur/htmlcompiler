@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: help clean compile test build validate coverage release-notes deploy
+.PHONY: help clean build test coverage install validate release-notes deploy
 
 NAME=`xmllint --xpath "//project/artifactId/text()" pom.xml`
 VERSION=`xmllint --xpath "//project/version/text()" pom.xml`
@@ -13,8 +13,8 @@ INFO = printf '[\033[1;34mINFO\033[m] %s\n'
 endif
 
 help: ## Show this help
-	@grep -hE '^[a-zA-Z_-]+:.*## ' $(MAKEFILE_LIST) | \
-		awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2}'
+	@grep -hE '^[a-zA-Z0-9_.-]+:' $(MAKEFILE_LIST) | grep -vE '^[a-zA-Z0-9_.-]+:=' | \
+		awk 'BEGIN {FS = ":"} /^\./ {next} {name = $$1; sub(/[[:blank:]]+$$/, "", name); doc = $$0; sub(/^[^#]*## /, "", doc); if (doc == $$0) sub(/^[^:]*:[[:blank:]]*/, "", doc); printf "  \033[36m%-10s\033[0m %s\n", name, doc}'
 
 clean: ## Delete everything in ./target
 	@$(INFO) "Cleaning"
@@ -37,20 +37,21 @@ install: ## Compile, package, and install jar in local repository
 	@mvn clean install -DskipTests
 
 # Checks to see if there are newer versions of dependencies or plugins
-validate: ## Check dependency versions, cves, and licenses
+validate: ## Check dependency versions, cves, licenses, and code quality
 	@mvn versions:display-dependency-updates
 	@mvn versions:display-plugin-updates
 	@mvn validate -P vulnerabilities
 	@mvn validate -P licenses
+	@mvn validate -P codequality
 
-release-notes:
+release-notes: ## Write release notes in src/docs/releases for the current version
 	@mkdir -p src/docs/releases
 	@$(INFO) "Writing release notes to src/docs/releases/release-$(VERSION).txt"
 	@echo "$(VERSION)" >> src/docs/releases/release-$(VERSION).txt
 	@echo "" >> src/docs/releases/release-$(VERSION).txt
 	@git log --pretty="%s" $(PREVIOUS_TAG)... master >> src/docs/releases/release-$(VERSION).txt
 
-deploy:
+deploy: ## Clean, build and deploy a version to Github and Maven Central
 	@$(INFO) "Uploading to maven central"
 	@mvn clean deploy
 	@$(INFO) "Creating github release"
