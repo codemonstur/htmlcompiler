@@ -1,0 +1,12 @@
+include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github-maven
+
+vendor: com.github.codemonstur
+name: htmlcompiler-example-integration-spring
+version: 1.0
+release: 17
+packaging: jar
+enablePreview: false
+dependencies:
+  - repository: org.springframework.boot:spring-boot-starter-web:3.3.1
+  - repository: org.springframework.boot:spring-boot-starter-security:3.3.1
+  - repository: org.springframework.security:spring-security-config:6.3.1

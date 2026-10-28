@@ -1,0 +1,7 @@
+include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github-maven
+
+vendor: com.github.codemonstur
+name: htmlcompiler-example-compile-pug
+version: 1.0
+packaging: jar
+enablePreview: false

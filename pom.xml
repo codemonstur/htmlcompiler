@@ -2,9 +2,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.codemonstur</groupId>
-    <artifactId>htmlcompiler</artifactId>
+    <artifactId>htmlcompiler-parent</artifactId>
     <version>5.8.0</version>
-    <packaging>maven-plugin</packaging>
+
+    <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>An HTML compiler, with maven plugin</description>
@@ -33,51 +34,67 @@
         </developer>
     </developers>
 
+    <modules>
+        <module>htmlcompiler-core</module>
+        <module>htmlcompiler-maven-plugin</module>
+        <module>htmlcompiler-bobplugin</module>
+        <module>htmlcompiler-cli</module>
+    </modules>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.release>17</maven.compiler.release>
         <maven.version>[3.6.3,)</maven.version>
 
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
-        <version.library.jsoup>1.23.2</version.library.jsoup>
-        <version.library.gson>2.15.0</version.library.gson>
+        <version.library.closure-compiler>v20261021</version.library.closure-compiler>
         <version.library.common-io>2.22.0</version.library.common-io>
         <version.library.commons-lang3>3.21.0</version.library.commons-lang3>
         <version.library.commons-text>1.15.0</version.library.commons-text>
-        <version.library.yuicompressor>2.4.8</version.library.yuicompressor>
+        <version.library.cssparser>0.9.30</version.library.cssparser>
+        <version.library.gson>2.15.0</version.library.gson>
         <version.library.htmlcompressor>2.4.1</version.library.htmlcompressor>
-        <version.library.jlessc>1.16</version.library.jlessc>
-        <version.library.jfiveparse>2.1.1</version.library.jfiveparse>
-        <version.library.vaadin-sass>0.9.13</version.library.vaadin-sass>
-        <version.library.pebble>4.1.2</version.library.pebble>
         <version.library.jade4j>1.3.2</version.library.jade4j>
-        <!-- Newer versions don't work: https://github.com/neuland/pug4j/issues/29 -->
-        <version.library.pug4j>3.1.1</version.library.pug4j>
-        <version.library.simplexml>3.6.0</version.library.simplexml>
-        <version.library.closure-compiler>v20261021</version.library.closure-compiler>
-        <version.library.minifier>2.0</version.library.minifier>
+        <version.library.jcli>2.0.0</version.library.jcli>
+        <version.library.jfiveparse>2.1.1</version.library.jfiveparse>
+        <version.library.jlessc>1.16</version.library.jlessc>
+        <version.library.jsoup>1.23.2</version.library.jsoup>
+        <version.library.junit>6.1.3</version.library.junit>
         <version.library.maven>3.10.0</version.library.maven>
         <version.library.maven-annotations>3.16.0</version.library.maven-annotations>
-        <version.library.cssparser>0.9.30</version.library.cssparser>
-        <version.library.junit>6.1.3</version.library.junit>
+        <version.library.minifier>2.0</version.library.minifier>
+        <version.library.pebble>4.1.2</version.library.pebble>
+        <version.library.pug4j>3.1.1</version.library.pug4j>
+        <version.library.simplexml>3.6.0</version.library.simplexml>
+        <version.library.vaadin-sass>0.9.13</version.library.vaadin-sass>
 
+        <version.library.yuicompressor>2.4.8</version.library.yuicompressor>
+
+        <version.plugin.check-cves>1.1.0</version.plugin.check-cves>
+        <version.plugin.check-license>1.4.0</version.plugin.check-license>
+        <version.plugin.codegrade>0.2.0</version.plugin.codegrade>
+        <version.plugin.compiler>3.16.0</version.plugin.compiler>
+        <version.plugin.enforcer>3.6.3</version.plugin.enforcer>
         <version.plugin.gpg>3.2.8</version.plugin.gpg>
-        <version.plugin.surefire>3.6.0</version.plugin.surefire>
+        <version.plugin.jar>3.5.1</version.plugin.jar>
+        <version.plugin.javadoc>3.12.0</version.plugin.javadoc>
         <version.plugin.plugin>3.16.0</version.plugin.plugin>
         <version.plugin.publish>0.12.0</version.plugin.publish>
-        <version.plugin.source>3.4.0</version.plugin.source>
         <version.plugin.shade>3.6.0</version.plugin.shade>
-        <version.plugin.javadoc>3.12.0</version.plugin.javadoc>
-        <version.plugin.check-cves>1.1.0</version.plugin.check-cves>
-        <version.plugin.codegrade>0.2.0</version.plugin.codegrade>
-        <version.plugin.license-check>1.3.0</version.plugin.license-check>
-        <version.plugin.enforcer>3.6.3</version.plugin.enforcer>
+        <version.plugin.source>3.4.0</version.plugin.source>
+        <version.plugin.surefire>3.6.0</version.plugin.surefire>
     </properties>
 
-    <dependencies>
+    <dependencyManagement>
+        <dependencies>
+
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>htmlcompiler-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.jsoup</groupId>
@@ -183,6 +200,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>jcli</artifactId>
+            <version>${version.library.jcli}</version>
+        </dependency>
+
         <!--  For Maven plugin  -->
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -212,13 +235,6 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.helger</groupId>-->
-<!--            <artifactId>ph-css</artifactId>-->
-<!--            <version>6.3.4</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -226,13 +242,77 @@
             <scope>test</scope>
         </dependency>
 
-    </dependencies>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${version.plugin.jar}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${version.plugin.source}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${version.plugin.javadoc}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${version.plugin.shade}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>${version.plugin.plugin}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>${version.plugin.gpg}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${version.plugin.publish}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.github.codemonstur</groupId>
+                    <artifactId>maven-check-license</artifactId>
+                    <version>${version.plugin.check-license}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.github.codemonstur</groupId>
+                    <artifactId>maven-check-cves</artifactId>
+                    <version>${version.plugin.check-cves}</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>com.github.codemonstur</groupId>
+                    <artifactId>codegrade-maven-plugin</artifactId>
+                    <version>${version.plugin.codegrade}</version>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
 
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -255,122 +335,21 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.plugin.compiler}</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <release>${maven.compiler.release}</release>
+                    <proc>full</proc>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${version.plugin.surefire}</version>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-plugin-plugin</artifactId>
-                <version>${version.plugin.plugin}</version>
-                <configuration>
-                    <goalPrefix>hc:</goalPrefix>
-                </configuration>
-            </plugin>
-
-            <!-- Builds the self-contained jar that bob loads as a plugin; it is attached
-                 with the classifier 'bobplugin' and uploaded to the Github release. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>${version.plugin.shade}</version>
-                <executions>
-                    <execution>
-                        <id>bobplugin</id>
-                        <phase>package</phase>
-                        <goals><goal>shade</goal></goals>
-                        <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
-                            <shadedClassifierName>bobplugin</shadedClassifierName>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>module-info.class</exclude>
-                                        <exclude>LICENSE</exclude>
-                                        <exclude>META-INF/versions/11/module-info.class</exclude>
-                                        <exclude>META-INF/versions/9/module-info.class</exclude>
-                                        <exclude>META-INF/maven/com.google.code.gson/gson/pom.properties</exclude>
-                                        <exclude>META-INF/maven/com.google.code.gson/gson/pom.xml</exclude>
-                                        <exclude>META-INF/maven/com.google.errorprone/error_prone_annotations/pom.properties</exclude>
-                                        <exclude>META-INF/maven/com.google.errorprone/error_prone_annotations/pom.xml</exclude>
-                                        <exclude>META-INF/NOTICE.txt</exclude>
-                                        <exclude>META-INF/LICENSE</exclude>
-                                        <exclude>META-INF/LICENSE.txt</exclude>
-                                        <exclude>META-INF/MANIFEST.MF</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <manifestEntries>
-                                        <Bob-Plugin-Class>htmlcompiler.BobPlugin</Bob-Plugin-Class>
-                                    </manifestEntries>
-                                </transformer>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-                            </transformers>
-                            <minimizeJar>false</minimizeJar>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>${version.plugin.source}</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version.plugin.javadoc}</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <phase>deploy</phase>
-                        <goals><goal>jar</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>${version.plugin.gpg}</version>
-                <configuration>
-                    <passphrase>${gpg.passphrase}</passphrase>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.sonatype.central</groupId>
-                <artifactId>central-publishing-maven-plugin</artifactId>
-                <version>${version.plugin.publish}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <publishingServerId>central</publishingServerId>
-                    <autoPublish>true</autoPublish>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -387,9 +366,12 @@
                     <plugin>
                         <groupId>com.github.codemonstur</groupId>
                         <artifactId>maven-check-license</artifactId>
-                        <version>${version.plugin.license-check}</version>
+                        <version>${version.plugin.check-license}</version>
                         <executions>
-                            <execution><goals><goal>check</goal></goals></execution>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals><goal>check</goal></goals>
+                            </execution>
                         </executions>
                         <configuration>
                             <includeTestDependencies>true</includeTestDependencies>
@@ -426,7 +408,10 @@
                         <artifactId>maven-check-cves</artifactId>
                         <version>${version.plugin.check-cves}</version>
                         <executions>
-                            <execution><goals><goal>check</goal></goals></execution>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals><goal>check</goal></goals>
+                            </execution>
                         </executions>
                         <configuration>
                             <includeTestDependencies>true</includeTestDependencies>
@@ -450,7 +435,10 @@
                         <artifactId>codegrade-maven-plugin</artifactId>
                         <version>${version.plugin.codegrade}</version>
                         <executions>
-                            <execution><goals><goal>check</goal></goals></execution>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals><goal>check</goal></goals>
+                            </execution>
                         </executions>
                     </plugin>
 

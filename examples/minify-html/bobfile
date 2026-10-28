@@ -1,0 +1,8 @@
+include https://raw.githubusercontent.com/codemonstur/bobfiles/master/foss-lib-github-maven
+
+vendor: com.github.codemonstur
+name: htmlcompiler-example-minify-html
+version: 1.0
+release: 18
+packaging: jar
+enablePreview: false

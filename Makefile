@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := help
 .PHONY: help clean build test coverage install validate release-notes deploy
 
-NAME=`xmllint --xpath "//project/artifactId/text()" pom.xml`
+NAME=htmlcompiler
 VERSION=`xmllint --xpath "//project/version/text()" pom.xml`
 PREVIOUS_TAG=`git tag | sort -r | head -n 1`
 
@@ -14,7 +14,7 @@ endif
 
 help: ## Show this help
 	@grep -hE '^[a-zA-Z0-9_.-]+:' $(MAKEFILE_LIST) | grep -vE '^[a-zA-Z0-9_.-]+:=' | \
-		awk 'BEGIN {FS = ":"} /^\./ {next} {name = $$1; sub(/[[:blank:]]+$$/, "", name); doc = $$0; sub(/^[^#]*## /, "", doc); if (doc == $$0) sub(/^[^:]*:[[:blank:]]*/, "", doc); printf "  \033[36m%-10s\033[0m %s\n", name, doc}'
+		awk 'BEGIN {FS = ":"} /^\./ {next} {name = $$1; sub(/[[:blank:]]+$$/, "", name); doc = $$0; sub(/^[^#]*## /, "", doc); if (doc == $$0) sub(/^[^:]*:[[:blank:]]*/, "", doc); printf "  \033[36m%-20s\033[0m %s\n", name, doc}'
 
 clean: ## Delete everything in ./target
 	@$(INFO) "Cleaning"
@@ -37,10 +37,11 @@ install: ## Compile, package, and install jar in local repository
 	@mvn clean install -DskipTests
 
 validate: ## Check dependency versions, cves, licenses, and code quality
+	@mvn com.github.codemonstur:maven-check-pom:1.0.0:check validate
+	@mvn com.github.codemonstur:maven-check-pom:1.0.0:reorder
 	@mvn versions:display-dependency-updates "-Dmaven.version.ignore=(?i).*(alpha|beta|rc|-m[0-9]+|snapshot).*"
 	@mvn versions:display-plugin-updates
-	@mvn validate -P vulnerabilities
-	@mvn validate -P licenses
+	@mvn verify -P vulnerabilities,licenses -DskipTests -T 1C
 	@mvn validate -P codequality
 
 release-notes: ## Write release notes in src/docs/releases for the current version
@@ -51,10 +52,26 @@ release-notes: ## Write release notes in src/docs/releases for the current versi
 	@git log --pretty="%s" $(PREVIOUS_TAG)... master >> src/docs/releases/release-$(VERSION).txt
 
 deploy: ## Clean, build and deploy a version to Github and Maven Central
-	@$(INFO) "Uploading to maven central"
-	@mvn clean deploy
+	@$(INFO) "Installing core (needed to build the plugin)"
+	@mvn -q -pl htmlcompiler-core clean install -DskipTests
+	@$(INFO) "Uploading maven-plugin to maven central"
+	@mvn -pl htmlcompiler-maven-plugin clean deploy
+	@$(INFO) "Building bobplugin for github release"
+	@mvn -q -pl htmlcompiler-bobplugin package
+	@$(INFO) "Building cli for github release"
+	@mvn -q -pl htmlcompiler-cli package
 	@$(INFO) "Creating github release"
-	@gh release create $(NAME)-$(VERSION) target/$(NAME).jar target/$(NAME)-javadoc.jar target/$(NAME)-sources.jar -F src/docs/releases/release-$(VERSION).txt
+	@gh release create $(NAME)-$(VERSION) \
+		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION).jar \
+		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION)-javadoc.jar \
+		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION)-sources.jar \
+		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin.jar \
+		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-javadoc.jar \
+		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-sources.jar \
+		htmlcompiler-cli/target/htmlcompiler-cli.jar \
+		htmlcompiler-cli/target/htmlcompiler-cli-$(VERSION)-javadoc.jar \
+		htmlcompiler-cli/target/htmlcompiler-cli-$(VERSION)-sources.jar \
+		-F src/docs/releases/release-$(VERSION).txt
 	@$(INFO) "Tagging and pushing to github"
 	@git tag $(NAME)-$(VERSION)
 	@git push && git push --tags
