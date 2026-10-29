@@ -1,0 +1,2341 @@
+{
+  "target": "/home/jurgen/projects/tools/htmlcompiler",
+  "files": 123,
+  "unixTimestamp": 1793287114,
+  "iso8601": "2026-10-29T15:18:34.163565445Z",
+  "generatedAt": "Thursday, October 29, 2026 15:18:34 UTC",
+  "durationMillis": 1194,
+  "duration": "1.194 s",
+  "score": 93.0,
+  "checks": [
+    {
+      "id": "long-file",
+      "description": "Files should stay under 150 lines, counting Javadoc as one",
+      "filesChecked": 123,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": 153
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": 154
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": 245
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/ElementChecks.java",
+          "line": 204
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused.java",
+          "line": 202
+        }
+      ]
+    },
+    {
+      "id": "long-line",
+      "description": "Lines should stay under 120 characters",
+      "filesChecked": 123,
+      "filesFailing": 44,
+      "violations": [
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/BobPlugin.java",
+          "line": 39
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/CliHtmlCompile.java",
+          "line": 20
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/CliHtmlHost.java",
+          "line": 21
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Compile.java",
+          "line": 49
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": 69
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CodeCompiler.java",
+          "line": 56
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": 67
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": 176
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/JsCompiler.java",
+          "line": 21
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateThenCompile.java",
+          "line": 26
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/DocumentChecks.java",
+          "line": 71
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/ElementChecks.java",
+          "line": 21
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Image.java",
+          "line": 21
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Import.java",
+          "line": 26
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Include.java",
+          "line": 26
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Library.java",
+          "line": 26
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": 72
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Meta.java",
+          "line": 31
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Script.java",
+          "line": 71
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Style.java",
+          "line": 22
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagVisitor.java",
+          "line": 28
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/JsMinifyEngine.java",
+          "line": 55
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ValidatorConfig.java",
+          "line": 22
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockVirtualHost.java",
+          "line": 51
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/library/LibraryArchive.java",
+          "line": 23
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": 83
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Http.java",
+          "line": 57
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/HttpHandlers.java",
+          "line": 64
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": 27
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryJsCode.java",
+          "line": 22
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": 34
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/HTML.java",
+          "line": 63
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/IO.java",
+          "line": 66
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Logger.java",
+          "line": 49
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupTagsInHead.java",
+          "line": 22
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CdnJsVersions.java",
+          "line": 13
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused.java",
+          "line": 23
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestIntegrity.java",
+          "line": 16
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestLibraryInsert.java",
+          "line": 16
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestScriptEncoding.java",
+          "line": 16
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestStyles.java",
+          "line": 19
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestTagMerging.java",
+          "line": 13
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": 41
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenProjectReader.java",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "id": "blank-lines",
+      "description": "Avoid multiple consecutive blank lines",
+      "filesChecked": 123,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagParsing.java",
+          "line": 55
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/StyleType.java",
+          "line": 67
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "id": "trailing-whitespace",
+      "description": "Lines should not have trailing whitespace",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateEngines.java",
+          "line": 37
+        }
+      ]
+    },
+    {
+      "id": "tab-indent",
+      "description": "Indent with spaces, not tabs",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "newline-eof",
+      "description": "Files should end with a newline",
+      "filesChecked": 123,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagVisitor.java",
+          "line": 31
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/Task.java",
+          "line": 14
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockVirtualHost.java",
+          "line": 97
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Service.java",
+          "line": 7
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenCompile.java",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "id": "empty-file",
+      "description": "Files should not be empty",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "star-imports",
+      "description": "Avoid wildcard (star) imports",
+      "filesChecked": 123,
+      "filesFailing": 20,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/FileCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/JsCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/ElementChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Image.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Meta.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Script.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Style.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/CssMinifyEngine.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ScriptType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/StyleType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/Request.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/HttpHandlers.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Repository.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/IO.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "unused-imports",
+      "description": "Remove unused imports",
+      "filesChecked": 123,
+      "filesFailing": 10,
+      "violations": [
+        {
+          "path": "examples/compile-html/src/main/java/example/Main.java",
+          "line": -1
+        },
+        {
+          "path": "examples/integration-spring/src/main/java/htmlcompiler/example/spring/Main.java",
+          "line": -1
+        },
+        {
+          "path": "examples/minify-html/src/main/java/example/Main.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/BobPlugin.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/JsCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Style.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/StyleType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "class-name-case",
+      "description": "Class names should be PascalCase",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "method-name-case",
+      "description": "Method/field names should be camelCase",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "exception-name",
+      "description": "Exceptions should not end in Exception",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "oop-name",
+      "description": "Avoid OOP-role suffixes in class names",
+      "filesChecked": 123,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/CheckListBuilder.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagVisitor.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/OnlyFileVisitor.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "long-names",
+      "description": "Avoid overly long class/method names",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "single-letter-var",
+      "description": "Avoid single-letter variable names",
+      "filesChecked": 123,
+      "filesFailing": 6,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Script.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Coding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Strings.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/FileContentType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCssParser.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "constant-naming",
+      "description": "static final fields should be UPPER_SNAKE_CASE",
+      "filesChecked": 123,
+      "filesFailing": 19,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/CssMinifyEngine.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/JsMinifyEngine.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Coding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/HTML.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupDoctype.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupInvisibleTag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupTagsInHead.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/Hashing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCompression.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestImportInclude.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestInlining.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestIntegrity.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestLibraryInsert.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestScriptEncoding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestSimpleCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestStyles.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestTagMerging.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "boolean-method-name",
+      "description": "Boolean methods should start with is/has/can/should",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "default-package",
+      "description": "Classes should declare a package",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "reverse-dns-package",
+      "description": "Avoid reverse-DNS style package names",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "long-method",
+      "description": "Methods should stay under 50 lines",
+      "filesChecked": 123,
+      "filesFailing": 4,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/DocumentChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Script.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "too-many-parameters",
+      "description": "Methods should take at most 5 parameters",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateThenCompile.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "deep-nesting",
+      "description": "Avoid deeply nested blocks (max 4)",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "high-complexity",
+      "description": "Methods should stay under cyclomatic complexity 10",
+      "filesChecked": 123,
+      "filesFailing": 6,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/DocumentChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Script.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "many-returns",
+      "description": "Avoid methods with too many returns",
+      "filesChecked": 123,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ScriptType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/StyleType.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "else-if-chain",
+      "description": "Avoid long else-if chains",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "enhanced-for",
+      "description": "Use enhanced for-loops over index loops",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/build/CoverageSummary.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "inner-class-depth",
+      "description": "Avoid deeply nested classes",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "large-class",
+      "description": "Classes should stay under 40 methods+fields",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "too-many-public-methods",
+      "description": "Classes should have at most 10 public methods",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockVirtualHost.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "public-mutable-field",
+      "description": "Avoid public non-final fields",
+      "filesChecked": 123,
+      "filesFailing": 11,
+      "violations": [
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/CliHtmlCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/CliHtmlHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Compile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ImageType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ScriptBag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/Task.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "mutable-static",
+      "description": "Avoid non-final static fields",
+      "filesChecked": 123,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/CssUsage.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Coding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/Hashing.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "missing-equals-hashcode",
+      "description": "Override equals and hashCode together",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "getters-setters",
+      "description": "Avoid getters and setters (expose behavior, not state)",
+      "filesChecked": 123,
+      "filesFailing": 7,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Compile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ScriptBag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Repository.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/MutableInteger.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Counter.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "boolean-parameter",
+      "description": "Avoid boolean parameters",
+      "filesChecked": 123,
+      "filesFailing": 8,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CodeCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateThenCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Http.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryJsCode.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Logger.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "string-equality",
+      "description": "Compare Strings with .equals, not \u003d\u003d",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "space-indent",
+      "description": "Indent with an even number of spaces",
+      "filesChecked": 123,
+      "filesFailing": 4,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/ElementChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagParsing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/versions/Version.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "license-header",
+      "description": "Avoid license boilerplate at the top of files",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "final-parameters",
+      "description": "Method parameters should be declared final",
+      "filesChecked": 123,
+      "filesFailing": 18,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CodeCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/FileCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/DocumentChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/ElementChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagVisitor.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/Minifier.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockVirtualHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Logger.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/OnlyFileVisitor.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupInvisibleTag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/JsoupToHtml.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCssParser.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/utils/App.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "magic-number",
+      "description": "Avoid magic numbers",
+      "filesChecked": 123,
+      "filesFailing": 9,
+      "violations": [
+        {
+          "path": "examples/compile-html/src/main/java/example/Main.java",
+          "line": -1
+        },
+        {
+          "path": "examples/minify-html/src/main/java/example/Main.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/Request.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Http.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/HttpHandlers.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryJsCode.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Coding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/HTTP.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "deprecated-api",
+      "description": "Avoid deprecated constructors/APIs",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "suppress-warnings",
+      "description": "Avoid @SuppressWarnings",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "missing-javadoc",
+      "description": "Public classes/methods should have Javadoc",
+      "filesChecked": 123,
+      "filesFailing": 116,
+      "violations": [
+        {
+          "path": "examples/compile-html/src/main/java/example/Main.java",
+          "line": -1
+        },
+        {
+          "path": "examples/integration-spring/src/main/java/htmlcompiler/example/spring/Main.java",
+          "line": -1
+        },
+        {
+          "path": "examples/minify-html/src/main/java/example/Main.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/BobPlugin.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/CliHtmlCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-bobplugin/src/main/java/htmlcompiler/CliHtmlHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/build/CoverageSummary.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Compile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Dependencies.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CodeCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/FileCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/JsCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateEngines.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateThenCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/CheckListBuilder.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/DocumentChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/ElementChecks.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Body.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Head.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Image.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Import.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Include.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Library.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Link.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Meta.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Script.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/Style.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagParsing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagVisitor.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/CssMinifyEngine.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/HtmlMinifyEngine.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/JsMinifyEngine.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/minify/Minifier.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/CompilerConfig.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ImageType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/MoveType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ScriptBag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ScriptType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/StyleType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/Task.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/error/InvalidInput.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/error/InvalidTemplate.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/error/UnrecognizedFileType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/Endpoint.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockApi.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockVirtualHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/Request.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/library/LibraryArchive.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/library/LibraryDescription.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/library/LibraryKey.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/versions/Version.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/CssUsage.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Http.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/HttpHandlers.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/InterruptableTask.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/LoopingSingleThread.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Repository.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryJsCode.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/Service.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Coding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Filenames.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/HTTP.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/IO.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Logger.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/MutableInteger.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/OnlyFileVisitor.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/Strings.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/FileAndPath.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/GoogleJsCompress.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupDoctype.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupInvisibleTag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupTagsInHead.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/NekoAsyncAttribute.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/NekoAttributesAlphabetical.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/examples/RunExamples.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CdnJsVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/GccJsCompress.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/Hashing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/JsoupFragment.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/JsoupToHtml.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/LocationBinary.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/TimeStamp.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/CurrentWorkingDirectory.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/FileContentType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCompression.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCssParser.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestImportInclude.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestInlining.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestIntegrity.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestLibraryInsert.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestScriptEncoding.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestScriptMoving.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestSimpleCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestStyles.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestTagMerging.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Counter.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Factory.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Parsing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenDependencies.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenProjectReader.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/utils/App.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "author-tag",
+      "description": "Avoid @author tags",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "private-field-javadoc",
+      "description": "Avoid Javadoc on private fields",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "empty-catch",
+      "description": "Avoid empty catch blocks",
+      "filesChecked": 123,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ImageType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "empty-finally",
+      "description": "Avoid empty finally blocks",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "empty-method",
+      "description": "Avoid empty method bodies",
+      "filesChecked": 123,
+      "filesFailing": 8,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/tags/TagVisitor.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupInvisibleTag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupNPE2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/Hashing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/JsoupToHtml.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "catch-general",
+      "description": "Avoid catching broad Exception/Throwable",
+      "filesChecked": 123,
+      "filesFailing": 12,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/FileCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateThenCompile.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/CompilerConfig.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ImageType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryVersions.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/utils/App.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "return-null",
+      "description": "Avoid returning null",
+      "filesChecked": 123,
+      "filesFailing": 5,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/CssCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/Request.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/IO.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenMinify.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "switch-fallthrough",
+      "description": "Avoid switch case fall-through",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "switch-default",
+      "description": "Switch statements should have a default",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/MoveType.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "optional-get",
+      "description": "Avoid Optional.get() without isPresent()",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/utils/IO.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "raw-types",
+      "description": "Avoid raw generic types",
+      "filesChecked": 123,
+      "filesFailing": 14,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/HtmlCompiler.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/checks/CheckListBuilder.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/CompilerConfig.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/ValidatorConfig.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockApi.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockVirtualHost.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/library/LibraryArchive.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/CssUsage.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryHashes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/examples/RunExamples.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-maven-plugin/src/main/java/htmlcompiler/commands/maven/MavenProjectReader.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "print-stack-trace",
+      "description": "Avoid printStackTrace()",
+      "filesChecked": 123,
+      "filesFailing": 3,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/commands/Host.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/RepositoryJsCode.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "system-out",
+      "description": "Avoid System.out/err (use a logger)",
+      "filesChecked": 123,
+      "filesFailing": 14,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/build/CoverageSummary.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/httpmock/MockApi.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/DirectoryWatcher.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/FileAndPath.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupInvisibleTag.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/JsoupFragment.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/JsoupToHtml.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/LocationBinary.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/TimeStamp.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/CurrentWorkingDirectory.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/FileContentType.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCssParser.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/util/Concurrent.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "commented-out-code",
+      "description": "Avoid commented-out code",
+      "filesChecked": 123,
+      "filesFailing": 7,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/services/CssUsage.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/examples/RunExamples.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/CssUnused2.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/incubation/Hashing.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/tools/HarvestTagsAndAttributes.java",
+          "line": -1
+        },
+        {
+          "path": "htmlcompiler-core/src/test/java/unittests/TestCssParser.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "todo-fixme",
+      "description": "No leftover TODO/FIXME/XXX markers",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/pojos/compile/StyleType.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "hardcoded-secret",
+      "description": "Avoid hardcoded secrets/credentials",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "weak-hash",
+      "description": "Avoid weak hash algorithms (MD5/SHA1)",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "sql-concat",
+      "description": "Avoid SQL string concatenation",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "test-no-assertions",
+      "description": "Test methods should contain assertions",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "thread-sleep-test",
+      "description": "Avoid Thread.sleep in tests",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "ignored-test",
+      "description": "Avoid @Ignore/@Disabled tests",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/test/java/bugs/JsoupTagsInHead.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "empty-test",
+      "description": "Avoid empty test methods",
+      "filesChecked": 123,
+      "filesFailing": 0,
+      "violations": []
+    },
+    {
+      "id": "unused-private",
+      "description": "Remove unused private fields/methods",
+      "filesChecked": 123,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "htmlcompiler-core/src/main/java/htmlcompiler/compilers/TemplateEngines.java",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "license",
+      "description": "Project must have a LICENSE file",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "readme",
+      "description": "Project must have a README file",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "build-file",
+      "description": "Project must have a build file (pom.xml or Gradle)",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "too-many-deps",
+      "description": "Keep dependencies under 20",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/htmlcompiler",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "snapshot-deps",
+      "description": "Avoid -SNAPSHOT/dynamic dependency versions",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "missing-dep-version",
+      "description": "Every dependency should declare a version",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "library-no-deps",
+      "description": "Libraries should have zero non-test dependencies (plugins exempt)",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "single-class-package",
+      "description": "Packages should contain more than one file",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/htmlcompiler",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "mixed-package",
+      "description": "A package should hold either files or sub-packages, not both",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/htmlcompiler",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "package-too-large",
+      "description": "Keep packages under 30 classes",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "circular-packages",
+      "description": "Avoid circular package dependencies",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/htmlcompiler",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "long-inheritance",
+      "description": "Avoid inheritance chains deeper than 3",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "no-tests",
+      "description": "Project should include tests",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "test-ratio",
+      "description": "Keep a reasonable test-to-source ratio",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": []
+    },
+    {
+      "id": "untested-classes",
+      "description": "Every main class should have a test",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/htmlcompiler",
+          "line": -1
+        }
+      ]
+    },
+    {
+      "id": "duplicated-code",
+      "description": "Avoid duplicated code blocks across files",
+      "filesChecked": 1,
+      "filesFailing": 1,
+      "violations": [
+        {
+          "path": "/home/jurgen/projects/tools/htmlcompiler",
+          "line": -1
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "loc",
+      "description": "Total physical lines",
+      "value": 6350
+    },
+    {
+      "id": "sloc",
+      "description": "Source lines, excluding blanks and comments",
+      "value": 5046
+    },
+    {
+      "id": "max-file-length",
+      "description": "Longest file, in lines",
+      "value": 245
+    },
+    {
+      "id": "cyclomatic-total",
+      "description": "Sum of cyclomatic complexity over all methods",
+      "value": 1061
+    },
+    {
+      "id": "cyclomatic-mean",
+      "description": "Mean cyclomatic complexity per method",
+      "value": 2.2574468085106383
+    },
+    {
+      "id": "cyclomatic-max",
+      "description": "Highest cyclomatic complexity of any method",
+      "value": 29
+    },
+    {
+      "id": "max-nesting",
+      "description": "Deepest control-flow nesting, in blocks",
+      "value": 5
+    },
+    {
+      "id": "halstead-volume",
+      "description": "Halstead volume of the whole codebase",
+      "value": 128553.80032314104
+    },
+    {
+      "id": "comment-ratio",
+      "description": "Comment lines, percent of all lines",
+      "value": 2.251968503937008
+    },
+    {
+      "id": "javadoc-coverage",
+      "description": "Public types and methods with Javadoc, percent",
+      "value": 0.44150110375275936
+    },
+    {
+      "id": "parse-failure-rate",
+      "description": "Files that failed to parse, percent",
+      "value": 0
+    },
+    {
+      "id": "maintainability-index",
+      "description": "Maintainability index, 0-100",
+      "value": 89.29189833746466
+    },
+    {
+      "id": "package-instability",
+      "description": "Mean package instability Ce/(Ca+Ce), percent",
+      "value": 59.43241943241944
+    },
+    {
+      "id": "commits",
+      "description": "Commits in history",
+      "value": 223
+    },
+    {
+      "id": "churn",
+      "description": "Lines added and deleted across history",
+      "value": 41576
+    },
+    {
+      "id": "hotspot-index",
+      "description": "Highest churn times complexity of any file",
+      "value": 108
+    }
+  ],
+  "categories": [
+    {
+      "name": "coverage",
+      "score": 66.7
+    },
+    {
+      "name": "dependencies",
+      "score": 66.7
+    },
+    {
+      "name": "documentation",
+      "score": 68.6
+    },
+    {
+      "name": "imports",
+      "score": 87.8
+    },
+    {
+      "name": "structure",
+      "score": 90.4
+    },
+    {
+      "name": "format",
+      "score": 93.3
+    },
+    {
+      "name": "noise",
+      "score": 94.9
+    },
+    {
+      "name": "style",
+      "score": 95.7
+    },
+    {
+      "name": "control flow",
+      "score": 96.0
+    },
+    {
+      "name": "design",
+      "score": 96.7
+    },
+    {
+      "name": "duplication",
+      "score": 97.1
+    },
+    {
+      "name": "naming",
+      "score": 97.6
+    },
+    {
+      "name": "complexity",
+      "score": 98.4
+    },
+    {
+      "name": "dead code",
+      "score": 99.2
+    },
+    {
+      "name": "tests",
+      "score": 99.8
+    },
+    {
+      "name": "security",
+      "score": 100.0
+    },
+    {
+      "name": "library",
+      "score": 100.0
+    },
+    {
+      "name": "project",
+      "score": 100.0
+    }
+  ]
+}

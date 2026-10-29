@@ -58,8 +58,6 @@ deploy: ## Clean, build and deploy a version to Github and Maven Central
 	@mvn -pl htmlcompiler-maven-plugin clean deploy
 	@$(INFO) "Building bobplugin for github release"
 	@mvn -q -pl htmlcompiler-bobplugin package
-	@$(INFO) "Building cli for github release"
-	@mvn -q -pl htmlcompiler-cli package
 	@$(INFO) "Creating github release"
 	@gh release create $(NAME)-$(VERSION) \
 		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION).jar \
@@ -68,9 +66,6 @@ deploy: ## Clean, build and deploy a version to Github and Maven Central
 		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin.jar \
 		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-javadoc.jar \
 		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-sources.jar \
-		htmlcompiler-cli/target/htmlcompiler-cli.jar \
-		htmlcompiler-cli/target/htmlcompiler-cli-$(VERSION)-javadoc.jar \
-		htmlcompiler-cli/target/htmlcompiler-cli-$(VERSION)-sources.jar \
 		-F src/docs/releases/release-$(VERSION).txt
 	@$(INFO) "Tagging and pushing to github"
 	@git tag $(NAME)-$(VERSION)

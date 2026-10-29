@@ -38,7 +38,6 @@
         <module>htmlcompiler-core</module>
         <module>htmlcompiler-maven-plugin</module>
         <module>htmlcompiler-bobplugin</module>
-        <module>htmlcompiler-cli</module>
     </modules>
 
     <properties>
