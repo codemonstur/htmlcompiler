@@ -108,6 +108,13 @@
             <scope>test</scope>
         </dependency>
 
+            <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit6</artifactId>
+            <version>${version.library.archunit}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

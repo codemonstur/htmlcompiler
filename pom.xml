@@ -83,7 +83,9 @@
         <version.plugin.shade>3.6.0</version.plugin.shade>
         <version.plugin.source>3.4.0</version.plugin.source>
         <version.plugin.surefire>3.6.0</version.plugin.surefire>
-    </properties>
+            <version.library.pitest-junit5>1.2.3</version.library.pitest-junit5>
+        <version.plugin.pitest>1.30.1</version.plugin.pitest>
+</properties>
 
     <dependencyManagement>
         <dependencies>
@@ -445,6 +447,38 @@
             </build>
         </profile>
 
-    </profiles>
+            <profile>
+            <id>mutation</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-maven</artifactId>
+                        <version>${version.plugin.pitest}</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.pitest</groupId>
+                                <artifactId>pitest-junit5-plugin</artifactId>
+                                <version>${version.library.pitest-junit5}</version>
+                            </dependency>
+                        </dependencies>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>mutationCoverage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+</profiles>
 
 </project>
