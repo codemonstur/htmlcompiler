@@ -20,9 +20,8 @@ clean: ## Delete everything in ./target
 	@$(INFO) "Cleaning"
 	@mvn clean
 
-build: ## Builds the jar
+build: ## Runs a mvn clean package
 	@mvn -DskipTests clean package
-
 test: ## Runs the tests
 	@mvn clean test
 
@@ -30,7 +29,7 @@ coverage: ## Run tests and generate a jacoco coverage report
 	@$(INFO) "Running tests and generating coverage report"
 	@mvn -Dstyle.color=always org.jacoco:jacoco-maven-plugin:0.8.15:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.15:report
 	@$(INFO) "Coverage report written to target/site/jacoco/index.html"
-	@output=$$(java src/build/CoverageSummary.java target/site/jacoco/jacoco.csv) || exit $$?; \
+	@output=$$(java src/build/CoverageSummary.java htmlcompiler-core/target/site/jacoco/jacoco.csv) || exit $$?; \
 	printf '%s\n' "$$output" | while IFS= read -r line; do $(INFO) "$$line"; done
 
 install: ## Compile, package, and install jar in local repository
@@ -49,7 +48,6 @@ validate: ## Check dependency versions, cves, licenses, and code quality
 	@mvn versions:display-plugin-updates
 	@mvn verify -P vulnerabilities,licenses -DskipTests -T 1C
 	@mvn validate -P codequality
-
 release-notes: ## Write release notes in src/docs/releases for the current version
 	@mkdir -p src/docs/releases
 	@$(INFO) "Writing release notes to src/docs/releases/release-$(VERSION).txt"
