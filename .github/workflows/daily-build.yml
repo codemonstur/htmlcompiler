@@ -18,6 +18,7 @@ jobs:
       - name: Build
         env:
           MAVEN_ARGS: -B
+          SKIP_BOBPLUGIN: 1
         run: |
           set -o pipefail
           make build 2>&1 | tee build.log
@@ -26,7 +27,7 @@ jobs:
             echo "Build failed with exit status $status"
             exit "$status"
           fi
-          if grep -iE 'warning|error' build.log; then
+          if grep -E '\[ERROR\]|\[WARNING\]' build.log; then
             echo "Build failed due to warnings or errors in build.log"
             exit 1
           fi

@@ -35,9 +35,8 @@
     </developers>
 
     <modules>
-        <module>htmlcompiler-core</module>
-        <module>htmlcompiler-maven-plugin</module>
-        <module>htmlcompiler-bobplugin</module>
+        <module>core</module>
+        <module>maven-plugin</module>
     </modules>
 
     <properties>
@@ -503,6 +502,17 @@
                 </plugins>
             </build>
         </profile>
+    <profile>
+        <id>bobplugin</id>
+        <activation>
+            <property>
+                <name>!env.SKIP_BOBPLUGIN</name>
+            </property>
+        </activation>
+        <modules>
+            <module>bobplugin</module>
+        </modules>
+    </profile>
 </profiles>
 
 </project>

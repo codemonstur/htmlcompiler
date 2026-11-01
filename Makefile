@@ -29,7 +29,7 @@ coverage: ## Run tests and generate a jacoco coverage report
 	@$(INFO) "Running tests and generating coverage report"
 	@mvn -Dstyle.color=always org.jacoco:jacoco-maven-plugin:0.8.15:prepare-agent test org.jacoco:jacoco-maven-plugin:0.8.15:report
 	@$(INFO) "Coverage report written to target/site/jacoco/index.html"
-	@output=$$(java src/build/CoverageSummary.java htmlcompiler-core/target/site/jacoco/jacoco.csv) || exit $$?; \
+	@output=$$(java src/build/CoverageSummary.java core/target/site/jacoco/jacoco.csv) || exit $$?; \
 	printf '%s\n' "$$output" | while IFS= read -r line; do $(INFO) "$$line"; done
 
 install: ## Compile, package, and install jar in local repository
@@ -57,19 +57,19 @@ release-notes: ## Write release notes in src/docs/releases for the current versi
 
 deploy: ## Clean, build and deploy a version to Github and Maven Central
 	@$(INFO) "Installing core (needed to build the plugin)"
-	@mvn -q -pl htmlcompiler-core clean install -DskipTests
+	@mvn -q -pl core clean install -DskipTests
 	@$(INFO) "Uploading maven-plugin to maven central"
-	@mvn -pl htmlcompiler-maven-plugin clean deploy
+	@mvn -pl maven-plugin clean deploy
 	@$(INFO) "Building bobplugin for github release"
-	@mvn -q -pl htmlcompiler-bobplugin package
+	@mvn -q -pl bobplugin package
 	@$(INFO) "Creating github release"
 	@gh release create $(NAME)-$(VERSION) \
-		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION).jar \
-		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION)-javadoc.jar \
-		htmlcompiler-maven-plugin/target/$(NAME)-$(VERSION)-sources.jar \
-		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin.jar \
-		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-javadoc.jar \
-		htmlcompiler-bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-sources.jar \
+		maven-plugin/target/$(NAME)-$(VERSION).jar \
+		maven-plugin/target/$(NAME)-$(VERSION)-javadoc.jar \
+		maven-plugin/target/$(NAME)-$(VERSION)-sources.jar \
+		bobplugin/target/htmlcompiler-bobplugin.jar \
+		bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-javadoc.jar \
+		bobplugin/target/htmlcompiler-bobplugin-$(VERSION)-sources.jar \
 		-F src/docs/releases/release-$(VERSION).txt
 	@$(INFO) "Tagging and pushing to github"
 	@git tag $(NAME)-$(VERSION)
