@@ -85,16 +85,24 @@ public enum CssCompiler {;
                 final SCSSDocumentHandler handler = new SCSSDocumentHandlerImpl();
 
                 // The thread local error handler must be set before compiling, otherwise
-                // import failures inside vaadin NPE while trying to report themselves
+                // import failures inside vaadin NPE while trying to report themselves.
+                // On some JDKs the thread-local is cleared between set() and the parse, so
+                // the set is repeated and the parse retried once if that happens.
                 SCSSErrorHandler.set(newVaadinTraversalLogger(logger));
                 final var scssCompiler = new Parser();
                 scssCompiler.setErrorHandler(errorHandler);
                 scssCompiler.setDocumentHandler(handler);
 
-                // Any failure from here on must propagate: the vaadin error handlers rethrow,
-                // because a logged-and-returned parse error would emit a partial stylesheet
-                // while the build still succeeds
-                scssCompiler.parseStyleSheet(new InputSource(new StringReader(code)));
+                try {
+                    scssCompiler.parseStyleSheet(new InputSource(new StringReader(code)));
+                } catch (NullPointerException npe) {
+                    if (npe.getMessage() == null || !npe.getMessage().contains("SCSSErrorHandler")) throw npe;
+                    SCSSErrorHandler.set(newVaadinTraversalLogger(logger));
+                    final var retryCompiler = new Parser();
+                    retryCompiler.setErrorHandler(errorHandler);
+                    retryCompiler.setDocumentHandler(handler);
+                    retryCompiler.parseStyleSheet(new InputSource(new StringReader(code)));
+                }
 
                 // Without resolvers, a backing file, and a charset the parsed sheet
                 // cannot resolve @import statements and fails on any stylesheet that uses them
