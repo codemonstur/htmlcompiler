@@ -1,6 +1,6 @@
 package htmlcompiler.compilers;
 
-import de.neuland.pug4j.PugConfiguration;
+import de.neuland.pug4j.PugEngine;
 import de.neuland.pug4j.template.FileTemplateLoader;
 import de.neuland.pug4j.template.PugTemplate;
 import io.pebbletemplates.pebble.PebbleEngine;
@@ -46,10 +46,9 @@ public enum TemplateEngines {;
         final var fileLoader = new FileTemplateLoader(rootPath);
         fileLoader.setBase(filePath.substring(0, filePath.lastIndexOf('/')));
 
-        final var config = new PugConfiguration();
-        config.setTemplateLoader(fileLoader);
+        final var engine = PugEngine.builder().templateLoader(fileLoader).build();
 
-        return config.getTemplate(File.separator + templateFile.getFileName());
+        return engine.getTemplate(File.separator + templateFile.getFileName());
     }
 
     public static HtmlTemplateEngine newPebbleEngine(final Map<String, String> context) {
