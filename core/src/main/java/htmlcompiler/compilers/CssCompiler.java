@@ -1,13 +1,13 @@
 package htmlcompiler.compilers;
 
 import com.inet.lib.less.Less;
-import com.vaadin.sass.internal.ScssStylesheet;
-import com.vaadin.sass.internal.handler.SCSSDocumentHandler;
-import com.vaadin.sass.internal.handler.SCSSDocumentHandlerImpl;
-import com.vaadin.sass.internal.handler.SCSSErrorHandler;
-import com.vaadin.sass.internal.parser.Parser;
-import com.vaadin.sass.internal.resolver.ClassloaderResolver;
-import com.vaadin.sass.internal.resolver.FilesystemResolver;
+import jsass.internal.ScssStylesheet;
+import jsass.internal.handler.SCSSDocumentHandler;
+import jsass.internal.handler.SCSSDocumentHandlerImpl;
+import jsass.internal.handler.SCSSErrorHandler;
+import jsass.internal.parser.Parser;
+import jsass.internal.resolver.ClassloaderResolver;
+import jsass.internal.resolver.FilesystemResolver;
 import com.yahoo.platform.yui.compressor.CssCompressor;
 import htmlcompiler.utils.Logger;
 import org.w3c.css.sac.CSSException;
@@ -20,7 +20,7 @@ import java.nio.file.Path;
 
 import static htmlcompiler.compilers.CodeCompiler.newExternalToolCompiler;
 import static htmlcompiler.compilers.CodeCompiler.newStdoutToolCompiler;
-import static htmlcompiler.utils.Logger.newVaadinLogger;
+import static htmlcompiler.utils.Logger.newJsassLogger;
 
 public enum CssCompiler {;
 
@@ -68,7 +68,7 @@ public enum CssCompiler {;
     }
 
     public static CodeCompiler newInternalScssCompiler(final Logger logger) {
-        final var errorHandler = newVaadinLogger(logger);
+        final var errorHandler = newJsassLogger(logger);
         return new CodeCompiler() {
             public String compileCode(final String code, final Path parent) throws Exception {
                 return toCssCode(toCompiledStylesheet(code, toBackingFile(parent)));
@@ -85,10 +85,10 @@ public enum CssCompiler {;
                 final SCSSDocumentHandler handler = new SCSSDocumentHandlerImpl();
 
                 // The thread local error handler must be set before compiling, otherwise
-                // import failures inside vaadin NPE while trying to report themselves.
+                // import failures inside jsass NPE while trying to report themselves.
                 // On some JDKs the thread-local is cleared between set() and the parse, so
                 // the set is repeated and the parse retried once if that happens.
-                SCSSErrorHandler.set(newVaadinTraversalLogger(logger));
+                SCSSErrorHandler.set(newJsassTraversalLogger(logger));
                 final var scssCompiler = new Parser();
                 scssCompiler.setErrorHandler(errorHandler);
                 scssCompiler.setDocumentHandler(handler);
@@ -97,7 +97,7 @@ public enum CssCompiler {;
                     scssCompiler.parseStyleSheet(new InputSource(new StringReader(code)));
                 } catch (NullPointerException npe) {
                     if (npe.getMessage() == null || !npe.getMessage().contains("SCSSErrorHandler")) throw npe;
-                    SCSSErrorHandler.set(newVaadinTraversalLogger(logger));
+                    SCSSErrorHandler.set(newJsassTraversalLogger(logger));
                     final var retryCompiler = new Parser();
                     retryCompiler.setErrorHandler(errorHandler);
                     retryCompiler.setDocumentHandler(handler);
@@ -124,11 +124,11 @@ public enum CssCompiler {;
         };
     }
 
-    private static SCSSErrorHandler newVaadinTraversalLogger(final Logger logger) {
+    private static SCSSErrorHandler newJsassTraversalLogger(final Logger logger) {
         return new SCSSErrorHandler() {
-            // Every handler rethrows: vaadin reports recoverable errors by calling these
+            // Every handler rethrows: jsass reports recoverable errors by calling these
             // and continuing, which would silently drop imports or emit a partial sheet.
-            // traverseError(String) is caught by vaadin and re-reported through
+            // traverseError(String) is caught by jsass and re-reported through
             // traverseError(Exception), which is not caught again, so this propagates
             @Override
             public void traverseError(final Exception e) {

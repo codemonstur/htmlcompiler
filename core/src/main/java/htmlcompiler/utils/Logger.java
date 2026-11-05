@@ -24,7 +24,7 @@ public interface Logger {
     void warn(String message, boolean withNewLine);
     void error(String message, boolean withNewLine);
 
-    static ErrorHandler newVaadinLogger(final Logger logger) {
+    static ErrorHandler newJsassLogger(final Logger logger) {
         return new ErrorHandler() {
             public void warning(CSSParseException e) throws CSSException {
                 logger.warn(e.getMessage());
