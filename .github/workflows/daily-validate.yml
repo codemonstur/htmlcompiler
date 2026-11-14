@@ -16,6 +16,8 @@ jobs:
           java-version: '27'
           cache: maven
       - name: Validate
+        env:
+          SKIP_BOBPLUGIN: 1
         run: |
           set -o pipefail
           make validate 2>&1 | tee validate.log

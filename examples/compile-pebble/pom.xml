@@ -11,8 +11,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>            <maven.compiler.release>17</maven.compiler.release>
             <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
         <argLine></argLine>
-            <version.plugin.jacoco>0.8.15</version.plugin.jacoco>
-            <version.plugin.surefire>3.6.0</version.plugin.surefire>
+            <version.plugin.jacoco>0.8.16</version.plugin.jacoco>
+            <version.plugin.surefire>3.6.1</version.plugin.surefire>
     </properties>
 
     <build>

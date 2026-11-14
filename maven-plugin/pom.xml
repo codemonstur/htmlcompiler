@@ -1,13 +1,6 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
 
-    <properties>            <maven.compiler.release>17</maven.compiler.release>
-            <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
-        <argLine></argLine>
-            <version.plugin.jacoco>0.8.15</version.plugin.jacoco>
-            <version.plugin.surefire>3.6.0</version.plugin.surefire>
-    </properties>
-
     <parent>
         <groupId>com.github.codemonstur</groupId>
         <artifactId>htmlcompiler-parent</artifactId>
@@ -20,6 +13,13 @@
     <name>${project.groupId}:${project.artifactId}</name>
     <description>An HTML compiler, with maven plugin</description>
     <url>https://github.com/codemonstur/HTMLCompiler</url>
+
+    <properties>            <maven.compiler.release>17</maven.compiler.release>
+            <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
+        <argLine></argLine>
+            <version.plugin.jacoco>0.8.16</version.plugin.jacoco>
+            <version.plugin.surefire>3.6.1</version.plugin.surefire>
+    </properties>
 
     <dependencies>
 
