@@ -9,6 +9,7 @@ Added the minify command and an example for it
 Merged the bob plugin into this project: the release now carries a jar that can be used
 with `plugin codemonstur/htmlcompiler:5.9.0`, replacing htmlcompiler-bobplugin
 Refactored htmlcompiler into a multi-module layout
+Published the parent and core artifacts together with the Maven plugin
 Updated dependency and plugin versions
 
 Changes since htmlcompiler-5.7.6:

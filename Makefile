@@ -63,12 +63,10 @@ deploy: ## Clean, build and deploy a version to Github and Maven Central
 		$(INFO) "Write the release notes by hand before deploying." >&2; \
 		exit 1; \
 	fi
-	@$(INFO) "Installing core (needed to build the plugin)"
-	@mvn -pl core clean install -DskipTests
-	@$(INFO) "Uploading maven-plugin to maven central"
-	@mvn -pl maven-plugin clean deploy -P release
+	@$(INFO) "Uploading core and maven-plugin to maven central"
+	@mvn -pl .,core,maven-plugin clean deploy -P release
 	@$(INFO) "Building bobplugin for github release"
-	@mvn -pl bobplugin package
+	@mvn -pl bobplugin -am clean package
 	@$(INFO) "Creating github release"
 	@gh release create $(NAME)-$(VERSION) \
 		maven-plugin/target/$(NAME)-$(VERSION).jar \
