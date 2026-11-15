@@ -110,6 +110,12 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <scope>test</scope>
+        </dependency>
+
             <dependency>
             <groupId>com.tngtech.archunit</groupId>
             <artifactId>archunit-junit6</artifactId>
@@ -127,6 +133,10 @@
                 <version>${version.plugin.surefire}</version>
                 <configuration>
                     <argLine>@{argLine} -Xshare:off</argLine>
+                    <environmentVariables>
+                        <!-- Provides the deterministic stylus fixture used by TestStyles -->
+                        <PATH>${project.basedir}/src/test/resources/stylus-bin${path.separator}${env.PATH}</PATH>
+                    </environmentVariables>
                 </configuration>
             </plugin>
 

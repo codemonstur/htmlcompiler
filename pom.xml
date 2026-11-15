@@ -65,6 +65,7 @@
         <version.library.pebble>4.1.3</version.library.pebble>
         <version.library.pug4j>3.1.1</version.library.pug4j>
         <version.library.simplexml>3.7.0</version.library.simplexml>
+        <version.library.slf4j>2.0.18</version.library.slf4j>
         <version.library.jsass>1.0.0</version.library.jsass>
 
         <version.library.yuicompressor>2.4.8</version.library.yuicompressor>
@@ -175,6 +176,12 @@
             <groupId>com.github.codemonstur</groupId>
             <artifactId>simplexml</artifactId>
             <version>${version.library.simplexml}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>${version.library.slf4j}</version>
         </dependency>
 
         <dependency>

@@ -1,0 +1,7 @@
+#!/bin/sh
+# Test fixture for the external stylus compiler.
+# It returns deterministic CSS so the tests do not depend on Node or Stylus.
+cat <<'CSS'
+body{font:14px/1.4 Helvetica,Arial,sans-serif}
+a.button{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+CSS

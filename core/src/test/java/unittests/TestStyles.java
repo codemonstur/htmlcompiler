@@ -5,12 +5,9 @@ import htmlcompiler.pojos.error.InvalidInput;
 import org.junit.jupiter.api.Test;
 import util.Parsing;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static htmlcompiler.utils.IO.findBinaryInPath;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static util.Factory.newHtmlCompiler;
 
 public class TestStyles {
@@ -50,30 +47,19 @@ public class TestStyles {
         assertEquals(html_output_scss_inline, output, "Invalid generated HTML");
     }
 
-    // Depends on stylus being installed on the host
+    // Uses the deterministic stylus fixture on the test PATH, see src/test/resources/stylus-bin
     @Test
     public void compileExternalStylus() throws IOException, InvalidInput {
-        assumeStylusInstalled();
         final HtmlCompiler compiler = newHtmlCompiler();
         final String output = Parsing.compileFile(compiler, "src/test/resources/styles/stylus_external.html");
         assertEquals(html_output_stylus_external, output, "Invalid generated HTML");
     }
 
-    // Depends on stylus being installed on the host
     @Test
     public void compileInlineStylus() throws IOException, InvalidInput {
-        assumeStylusInstalled();
         final HtmlCompiler compiler = newHtmlCompiler();
         final String output = Parsing.compileFile(compiler, "src/test/resources/styles/stylus_inline.html");
         assertEquals(html_output_stylus_inline, output, "Invalid generated HTML");
-    }
-
-    private static void assumeStylusInstalled() {
-        try {
-            findBinaryInPath("stylus");
-        } catch (final FileNotFoundException e) {
-            assumeTrue(false, "The stylus compiler is not installed on this host: " + e.getMessage());
-        }
     }
 
 }
