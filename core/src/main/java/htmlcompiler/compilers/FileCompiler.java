@@ -53,8 +53,8 @@ public interface FileCompiler {
         // assets follow --no-compression like inline code does
         return Map.ofEntries
             ( entry(".pebble", newHtmlCompiler(html, newPebbleEngine(context)))
-            , entry(".jade", newHtmlCompiler(html, newJade4jEngine(context)))
-            , entry(".pug", newHtmlCompiler(html, newPug4jEngine(baseDir, context)))
+            , entry(".jade", newHtmlCompiler(html, newPug4jEngine(baseDir, context, "jade")))
+            , entry(".pug", newHtmlCompiler(html, newPug4jEngine(baseDir, context, "pug")))
             , entry(".htm", newHtmlCompiler(html, Files::readString))
             , entry(".html", newHtmlCompiler(html, Files::readString))
             , entry(".hct", newHtmlCompiler(html, Files::readString))

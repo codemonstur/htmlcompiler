@@ -1,0 +1,38 @@
+5.9.0
+
+Replaced the unmaintained vaadin-sass-compiler with jsass
+Removed the unmaintained jade4j dependency: .jade templates are now rendered by pug4j
+Marked all maven plugin goals as thread-safe, including minify
+Replaced the deprecated PugConfiguration with PugEngine
+Hardened the SCSS compiler against a NullPointerException on newer JDKs
+Added the minify command and an example for it
+Merged the bob plugin into this project: the release now carries a jar that can be used
+with `plugin codemonstur/htmlcompiler:5.9.0`, replacing htmlcompiler-bobplugin
+Refactored htmlcompiler into a multi-module layout
+Updated dependency and plugin versions
+
+Changes since htmlcompiler-5.7.6:
+- Refactor htmlcompiler into multi-module layout
+- Updated maven config, build fixes, versions update
+- Build fixes
+- Create the release notes directory before writing the release notes
+- chore: commit pending local changes
+- Convert Gson-bound pojos to records, add coverage target, fix watcher and CSS error handling
+- Bugfix for compiling SCSS
+- Support for use as bob plugin
+- Updated dependencies and plugins, fixed the SRI integrity test
+- Added release notes
+- Updates
+- Updated versions, added threadsafe setting
+- Increased version
+- Potential fixes for using pug
+- Added minify command, added example for minify command
+- Updated examples to latest version
+- Harden SASS compiler against Vaadin NPE on newer JDKs
+- Replace deprecated PugConfiguration with PugEngine
+- Normalize Makefile spacing between targets
+- Update validate workflow grep to [ERROR]/[WARNING]
+- Replace vaadin-sass-compiler with jsass
+- Disable daily GitHub build workflow
+- Mark minify goal as thread-safe
+- Increased version to 5.9.0

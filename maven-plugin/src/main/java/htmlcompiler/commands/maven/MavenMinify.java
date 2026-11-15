@@ -21,7 +21,7 @@ import static java.nio.file.Files.*;
 import static java.nio.file.Files.isDirectory;
 import static org.apache.maven.plugins.annotations.LifecyclePhase.PREPARE_PACKAGE;
 
-@Mojo(defaultPhase = PREPARE_PACKAGE, name = "minify")
+@Mojo(defaultPhase = PREPARE_PACKAGE, name = "minify", threadSafe = true)
 public final class MavenMinify extends AbstractMojo {
 
     @Parameter(defaultValue = "${project}", readonly = true)

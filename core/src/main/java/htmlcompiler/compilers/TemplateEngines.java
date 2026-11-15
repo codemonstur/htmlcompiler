@@ -1,25 +1,17 @@
 package htmlcompiler.compilers;
 
 import de.neuland.pug4j.PugEngine;
+import de.neuland.pug4j.RenderContext;
 import de.neuland.pug4j.template.FileTemplateLoader;
-import de.neuland.pug4j.template.PugTemplate;
+import htmlcompiler.pojos.error.InvalidTemplate;
 import io.pebbletemplates.pebble.PebbleEngine;
 import io.pebbletemplates.pebble.error.PebbleException;
 import io.pebbletemplates.pebble.template.PebbleTemplate;
-import de.neuland.jade4j.Jade4J;
-import de.neuland.pug4j.Pug4J;
-import htmlcompiler.pojos.error.InvalidTemplate;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.Map;
-
-import static java.nio.file.Files.exists;
-import static java.nio.file.Files.isRegularFile;
 
 public enum TemplateEngines {;
 
@@ -29,26 +21,25 @@ public enum TemplateEngines {;
         }
     }
 
-    public static HtmlTemplateEngine newJade4jEngine(final Map<String, String> context) {
-        return file -> Jade4J.render(file.toAbsolutePath().toString(), Collections.unmodifiableMap(context));
-    }
-
-    public static HtmlTemplateEngine newPug4jEngine(final String rootPath, final Map<String, String> context) {
-        
-        return file -> Pug4J.render(file.toAbsolutePath().toString(), Collections.unmodifiableMap(context));
-    }
-
-    private static PugTemplate loadTemplate(final String rootPath, final String filePath) throws IOException {
-        final var templateFile = Paths.get(rootPath).resolve(filePath);
-        if (!exists(templateFile)) throw new FileNotFoundException("No template found at " + templateFile);
-        if (!isRegularFile(templateFile)) throw new IOException("Path to template is not a file " + templateFile);
-
-        final var fileLoader = new FileTemplateLoader(rootPath);
-        fileLoader.setBase(filePath.substring(0, filePath.lastIndexOf('/')));
-
-        final var engine = PugEngine.builder().templateLoader(fileLoader).build();
-
-        return engine.getTemplate(File.separator + templateFile.getFileName());
+    /**
+     * Creates a template engine that renders jade or pug templates using pug4j.
+     *
+     * @param rootPath the directory that template paths are resolved against
+     * @param context the variables made available to the template
+     * @param extension the template file extension, without the leading dot
+     * @return a compiler that renders the template to HTML
+     */
+    public static HtmlTemplateEngine newPug4jEngine(final String rootPath, final Map<String, String> context
+            , final String extension) {
+        final var root = Paths.get(rootPath).toAbsolutePath().normalize();
+        final var engine = PugEngine.builder()
+                .templateLoader(new FileTemplateLoader(root, extension))
+                .build();
+        return file -> {
+            final var templatePath = root.relativize(file.toAbsolutePath().normalize());
+            final var template = engine.getTemplate(templatePath.toString());
+            return engine.render(template, Collections.unmodifiableMap(context), RenderContext.defaults());
+        };
     }
 
     public static HtmlTemplateEngine newPebbleEngine(final Map<String, String> context) {

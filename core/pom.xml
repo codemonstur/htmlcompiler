@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.codemonstur</groupId>
         <artifactId>htmlcompiler-parent</artifactId>
-        <version>5.8.0</version>
+        <version>5.9.0</version>
     </parent>
 
     <artifactId>htmlcompiler-core</artifactId>
@@ -69,18 +69,13 @@
         </dependency>
 
         <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>vaadin-sass-compiler</artifactId>
+            <groupId>com.github.codemonstur</groupId>
+            <artifactId>jsass</artifactId>
         </dependency>
 
         <dependency>
             <groupId>io.pebbletemplates</groupId>
             <artifactId>pebble</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>de.neuland-bfi</groupId>
-            <artifactId>jade4j</artifactId>
         </dependency>
 
         <dependency>

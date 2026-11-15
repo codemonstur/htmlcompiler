@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.github.codemonstur</groupId>
         <artifactId>htmlcompiler-parent</artifactId>
-        <version>5.8.0</version>
+        <version>5.9.0</version>
     </parent>
 
     <artifactId>htmlcompiler-bobplugin</artifactId>
@@ -100,6 +100,26 @@
                                         <exclude>META-INF/*.SF</exclude>
                                         <exclude>META-INF/*.DSA</exclude>
                                         <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>com.yahoo.platform.yui:yuicompressor</artifact>
+                                    <excludes>
+                                        <exclude>org/mozilla/**</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>com.github.hazendaz:htmlcompressor</artifact>
+                                    <excludes>
+                                        <exclude>jargs/**</exclude>
+                                    </excludes>
+                                </filter>
+                                <filter>
+                                    <artifact>com.google.javascript:closure-compiler</artifact>
+                                    <excludes>
+                                        <exclude>org/jspecify/**</exclude>
+                                        <exclude>META-INF/maven/**</exclude>
+                                        <exclude>META-INF/versions/*/OSGI-INF/**</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
