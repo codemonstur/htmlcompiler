@@ -49,7 +49,7 @@
             <plugin>
                 <groupId>com.github.codemonstur</groupId>
                 <artifactId>htmlcompiler</artifactId>
-                <version>5.9.0</version>
+                <version>5.9.1</version>
                 <executions>
                     <execution><goals><goal>compile</goal></goals></execution>
                 </executions>

@@ -1,0 +1,6 @@
+5.9.1
+
+Updated closure-compiler from v20261109 to v20261117.
+Updated Maven to 3.10.1 and SLF4J to 2.0.20.
+This removes the terminally deprecated sun.misc.Unsafe calls that Java 27
+reported while minifying JavaScript.

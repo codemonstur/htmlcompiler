@@ -7,6 +7,6 @@ release: 17
 packaging: jar
 enablePreview: false
 dependencies:
-  - repository: org.springframework.boot:spring-boot-starter-web:3.3.1
-  - repository: org.springframework.boot:spring-boot-starter-security:3.3.1
-  - repository: org.springframework.security:spring-security-config:6.3.1
+  - repository: org.springframework.boot:spring-boot-starter-web:4.1.2
+  - repository: org.springframework.boot:spring-boot-starter-security:4.1.2
+  - repository: org.springframework.security:spring-security-config:7.1.2

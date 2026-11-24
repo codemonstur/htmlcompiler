@@ -48,7 +48,7 @@ No more minified files everywhere. No more manually compressing resources.
 <plugin>
     <groupId>com.github.codemonstur</groupId>
     <artifactId>htmlcompiler</artifactId>
-    <version>5.9.0</version>
+    <version>5.9.1</version>
     <executions>
         <execution><goals><goal>compile</goal></goals></execution>
     </executions>
@@ -66,7 +66,7 @@ The jar attached to each release doubles as a [bob](https://github.com/codemonst
 Add this line to the top of your bobfile:
 
 ```
-plugin codemonstur/htmlcompiler:5.9.0
+plugin codemonstur/htmlcompiler:5.9.1
 ```
 
 The `compile-html`, `host-frontend` and `check-frontend-dependencies` commands are then

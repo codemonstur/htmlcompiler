@@ -3,7 +3,7 @@
 
     <groupId>com.github.codemonstur</groupId>
     <artifactId>htmlcompiler-parent</artifactId>
-    <version>5.9.0</version>
+    <version>5.9.1</version>
 
     <packaging>pom</packaging>
 
@@ -46,7 +46,7 @@
         <maven.version>[3.9.0,)</maven.version>
 
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
-        <version.library.closure-compiler>v20261109</version.library.closure-compiler>
+        <version.library.closure-compiler>v20261117</version.library.closure-compiler>
         <version.library.common-io>2.22.0</version.library.common-io>
         <version.library.commons-lang3>3.22.0</version.library.commons-lang3>
         <version.library.commons-text>1.15.0</version.library.commons-text>
@@ -59,13 +59,13 @@
         <version.library.jlessc>1.16</version.library.jlessc>
         <version.library.jsoup>1.24.1</version.library.jsoup>
         <version.library.junit>6.1.3</version.library.junit>
-        <version.library.maven>3.10.0</version.library.maven>
+        <version.library.maven>3.10.1</version.library.maven>
         <version.library.maven-annotations>3.16.0</version.library.maven-annotations>
         <version.library.minifier>2.0</version.library.minifier>
         <version.library.pebble>4.1.3</version.library.pebble>
         <version.library.pug4j>3.1.1</version.library.pug4j>
         <version.library.simplexml>3.7.0</version.library.simplexml>
-        <version.library.slf4j>2.0.18</version.library.slf4j>
+        <version.library.slf4j>2.0.20</version.library.slf4j>
         <version.library.jsass>1.0.0</version.library.jsass>
 
         <version.library.yuicompressor>2.4.8</version.library.yuicompressor>
