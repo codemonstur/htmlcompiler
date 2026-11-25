@@ -45,6 +45,9 @@
         <maven.compiler.release>17</maven.compiler.release>
         <maven.version>[3.9.0,)</maven.version>
 
+        <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
+        <argLine></argLine>
+
         <version.library.bobthebuildtool>12</version.library.bobthebuildtool>
         <version.library.closure-compiler>v20261117</version.library.closure-compiler>
         <version.library.common-io>2.22.0</version.library.common-io>
@@ -67,8 +70,8 @@
         <version.library.simplexml>3.7.0</version.library.simplexml>
         <version.library.slf4j>2.0.20</version.library.slf4j>
         <version.library.jsass>1.0.0</version.library.jsass>
-
         <version.library.yuicompressor>2.4.8</version.library.yuicompressor>
+        <version.library.pitest-junit5>1.2.3</version.library.pitest-junit5>
 
         <version.plugin.check-cves>1.2.0</version.plugin.check-cves>
         <version.plugin.check-license>1.5.0</version.plugin.check-license>
@@ -83,11 +86,8 @@
         <version.plugin.shade>3.6.2</version.plugin.shade>
         <version.plugin.source>3.4.0</version.plugin.source>
         <version.plugin.surefire>3.6.1</version.plugin.surefire>
-            <version.library.pitest-junit5>1.2.3</version.library.pitest-junit5>
         <version.plugin.pitest>1.30.2</version.plugin.pitest>
-        <!-- default for @{argLine}; jacoco's prepare-agent appends the agent when it runs -->
-        <argLine></argLine>
-            <version.plugin.jacoco>0.8.16</version.plugin.jacoco>
+        <version.plugin.jacoco>0.8.16</version.plugin.jacoco>
     </properties>
 
     <dependencyManagement>
@@ -561,17 +561,19 @@
                 </plugins>
             </build>
         </profile>
-    <profile>
-        <id>bobplugin</id>
-        <activation>
-            <property>
-                <name>!env.SKIP_BOBPLUGIN</name>
-            </property>
-        </activation>
-        <modules>
-            <module>bobplugin</module>
-        </modules>
-    </profile>
-</profiles>
+
+        <profile>
+            <id>bobplugin</id>
+            <activation>
+                <property>
+                    <name>!env.SKIP_BOBPLUGIN</name>
+                </property>
+            </activation>
+            <modules>
+                <module>bobplugin</module>
+            </modules>
+        </profile>
+
+    </profiles>
 
 </project>
